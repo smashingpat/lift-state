@@ -1,3 +1,5 @@
+import { containerType } from './utils';
+
 export default function Container() {
     let listeners = [];
     this.$$type = containerType;

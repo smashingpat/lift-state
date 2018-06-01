@@ -1,18 +1,16 @@
 const path = require('path')
-const execSync = require('child_process').execSync
+const exec = require('./exec')
 const rimraf = require('rimraf')
 
 console.log('\nCleaning the old files')
 rimraf.sync(path.resolve(__dirname, '../es'))
 
-const exec = (command, extraEnv) =>
-  execSync(command, {
-    stdio: 'inherit',
-    env: Object.assign({}, process.env, extraEnv)
-  })
+console.log('\nBuilding CommonJS modules ...')
+exec('npx babel modules -d lib', {
+    BABEL_ENV: 'cjs'
+})
 
 console.log('\nBuilding ES modules ...')
-
-exec('npx babel modules -d es --ignore __tests__', {
-  BABEL_ENV: 'es'
+exec('npx babel modules -d es', {
+    BABEL_ENV: 'es'
 })

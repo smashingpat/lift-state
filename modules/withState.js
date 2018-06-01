@@ -2,7 +2,7 @@ import React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { getDisplayName } from './utils';
 
-export const withState = containers => WrappedComponent => {
+const withState = containers => WrappedComponent => {
     const wrappedComponentDisplayName = getDisplayName(WrappedComponent);
     const displayName = `withState(${wrappedComponentDisplayName})`;
     const ComponentWithStateContainer = props =>
@@ -20,3 +20,5 @@ export const withState = containers => WrappedComponent => {
 
     return hoistNonReactStatics(ComponentWithStateContainer, WrappedComponent);
 }
+
+export default withState;

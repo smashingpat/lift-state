@@ -1,3 +1,7 @@
+import React from 'react';
+import { initiateContainerInstances } from './utils';
+
+
 export default class State extends React.Component {
     constructor(props) {
         super(props);

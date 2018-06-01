@@ -1,16 +1,19 @@
 {
   "name": "lift-state",
   "version": "0.1.1",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
   "scripts": {
-    "build": "node ./tasks/build.js"
+    "build": "node ./tasks/build.js",
+    "prepublishOnly": "npm run build"
   },
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "dependencies": {
-    "hoist-non-react-statics": "^2.5.0"
+    "hoist-non-react-statics": "^2.5.0",
+    "react": "16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
