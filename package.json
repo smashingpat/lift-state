@@ -1,9 +1,12 @@
 {
   "name": "lift-state",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.4.0"
+    "react": "^16.0.0"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^2.5.0"
   }
 }
