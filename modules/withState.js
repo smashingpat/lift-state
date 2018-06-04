@@ -1,5 +1,6 @@
 import React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import State from './State';
 import { getDisplayName } from './utils';
 
 const withState = containers => WrappedComponent => {
@@ -7,7 +8,7 @@ const withState = containers => WrappedComponent => {
     const displayName = `withState(${wrappedComponentDisplayName})`;
     const ComponentWithStateContainer = props =>
         React.createElement(
-            WithState, {
+            State, {
                 containers
             },
             (containerInstances) => React.createElement(
